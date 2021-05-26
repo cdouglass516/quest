@@ -8,6 +8,28 @@ namespace Quest
     class Program
     {
         static void Main(string[] args)
+
+        {
+            Console.Write($"Enter Your Name: ");
+            string name = Console.ReadLine();
+            string playAgain = "";
+            bool cont = false;
+            do
+            {
+                RunProgram(name);
+
+
+                do
+                {
+                    Console.Write($"Would {name} Like to Play Again Yes or No: ");
+                    playAgain = Console.ReadLine();
+                    if(playAgain.ToLower() == "yes" || playAgain.ToLower() == "no")cont = true;
+                } while (!cont);
+                int x = 9 *8;
+            } while (playAgain.ToLower() == "yes");
+
+        }
+        static void RunProgram(string name)
         {
             // Create a few challenges for our Adventurer's quest
             // The "Challenge" Constructor takes three arguments
@@ -43,9 +65,8 @@ namespace Quest
             int maxAwesomeness = 100;
 
             // Make a new "Adventurer" object using the "Adventurer" class
-            Console.Write($"Enter Your Name: ");
-            string answer = Console.ReadLine();
-            Adventurer theAdventurer = new Adventurer(answer);
+
+            Adventurer theAdventurer = new Adventurer(name);
 
             // A list of challenges for the Adventurer to complete
             // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
