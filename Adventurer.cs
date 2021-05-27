@@ -1,3 +1,4 @@
+using System;
 namespace Quest
 {
     // An instance of the Adventurer class is an object that will undergo some challenges
@@ -21,7 +22,39 @@ namespace Quest
             HeadCover = headCover;
         }
         
+        public Robe ColorfulRobe { get; }
 
+        // A constructor to make a new Adventurer object with a given name
+        public Adventurer(string name, Robe colorfulRobe)
+        {
+            Name = name;
+            Awesomeness = 50;
+            ColorfulRobe = colorfulRobe;
+        }
+
+        public void GetDescription()
+        {
+            Console.Write($"{this.Name} is wearing a {ColorfulRobe.Length.ToString()} inch Robe of ");
+
+            int lenColors = ColorfulRobe.Colors.Count;
+            if (ColorfulRobe.Length == 0)
+            {
+                Console.Write(" Is Naked!");
+            }
+            else
+            {
+                foreach (string color in ColorfulRobe.Colors)
+                {
+                    Console.Write($"{color}");
+                    if (lenColors > 2) Console.Write(", ");
+                    if (lenColors == 2) Console.Write(" and ");
+                    lenColors--;
+                }
+            }
+
+            Console.WriteLine($"");
+
+        }
         // This method returns a string that describes the Adventurer's status
         // Note one way to describe what this method does is:
         //   it transforms the Awesomeness integer into a status string
