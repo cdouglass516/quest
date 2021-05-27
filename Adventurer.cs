@@ -12,13 +12,15 @@ namespace Quest
         //  So it can be read and changed by any code in the application
         public int Awesomeness { get; set; }
 
+        public Hat HeadCover {get; set;}
         // A constructor to make a new Adventurer object with a given name
-        public Adventurer(string name)
+        public Adventurer(string name, Hat headCover)
         {
             Name = name;
             Awesomeness = 50;
+            HeadCover = headCover;
         }
-
+        
 
         // This method returns a string that describes the Adventurer's status
         // Note one way to describe what this method does is:
