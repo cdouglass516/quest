@@ -13,14 +13,24 @@ namespace Quest
         //  So it can be read and changed by any code in the application
         public int Awesomeness { get; set; }
 
+        public Hat HeadCover {get; set;}
+        // A constructor to make a new Adventurer object with a given name
+        public Adventurer(string name, Hat headCover)
+        {
+            Name = name;
+            Awesomeness = 50;
+            HeadCover = headCover;
+        }
+        
         public Robe ColorfulRobe { get; }
 
         // A constructor to make a new Adventurer object with a given name
-        public Adventurer(string name, Robe colorfulRobe)
+        public Adventurer(string name, Robe colorfulRobe, Hat headCover)
         {
             Name = name;
             Awesomeness = 50;
             ColorfulRobe = colorfulRobe;
+            HeadCover = headCover;
         }
 
         public void GetDescription()
@@ -43,7 +53,7 @@ namespace Quest
                 }
             }
 
-            Console.WriteLine($"");
+            Console.WriteLine($" and a {HeadCover.ShininessDescription}  hat!");
 
         }
         // This method returns a string that describes the Adventurer's status

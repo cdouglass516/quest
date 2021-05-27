@@ -65,15 +65,16 @@ namespace Quest
             int maxAwesomeness = 100;
 
             // Make a new "Adventurer" object using the "Adventurer" class
+            Hat myHat = new Hat(11);
             Robe robe = new Robe();
             robe.Length = 34;
             List<string> colorsToAdd = new List<string>();
             colorsToAdd.Add("Brown");
             colorsToAdd.Add("Black");
-            colorsToAdd.Add("green");
-            colorsToAdd.Add("Olive");
+            colorsToAdd.Add("Aqua");
+            colorsToAdd.Add("Blue");
             robe.Colors = colorsToAdd;
-            Adventurer theAdventurer = new Adventurer(name, robe);
+            Adventurer theAdventurer = new Adventurer(name, robe, myHat);
             theAdventurer.GetDescription();
 
             // A list of challenges for the Adventurer to complete
